@@ -1,21 +1,22 @@
-import React from "react";
-import hero from "../assets/images/hero.webp";
+import React from 'react';
+import hero from '../assets/images/hero.webp';
+
 const Hero = () => {
   const social_media = [
     {
       name: 'Github',
       icon: 'logo-github',
-      link: 'https://github.com/Miliyonayalew/'
+      link: 'https://github.com/Miliyonayalew/',
     },
     {
       name: 'Linkedin',
       icon: 'logo-linkedin',
-      link: 'https://www.linkedin.com/in/miliyon-ayalew/'
+      link: 'https://www.linkedin.com/in/miliyon-ayalew/',
     },
     {
       name: 'Twitter',
-      icon: "logo-twitter",
-      link: 'https://twitter.com/MilaAyalew'
+      icon: 'logo-twitter',
+      link: 'https://twitter.com/MilaAyalew',
     },
   ];
   return (
@@ -33,7 +34,9 @@ const Hero = () => {
               Hello!
               <br />
             </span>
-            I'm <span>Miliyon Ayalew</span>
+            I'm
+            {' '}
+            <span>Miliyon Ayalew</span>
           </h1>
           <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
             Fullstack Developer
@@ -50,8 +53,8 @@ const Hero = () => {
                 key={i}
                 className="text-gray-600 hover:text-white cursor-pointer "
               >
-                <a href={icon.link} alt={icon.name}  target="_blank">
-                  <ion-icon name={icon.icon}></ion-icon>
+                <a href={icon.link} alt={icon.name} target="_blank" rel="noreferrer">
+                  <ion-icon name={icon.icon} />
                 </a>
               </div>
             ))}

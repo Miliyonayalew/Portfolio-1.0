@@ -1,54 +1,54 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import project1 from "../assets/images/project-1.webp";
-import project2 from "../assets/images/project-2.webp";
-import project3 from "../assets/images/project-3.webp";
-import project4 from "../assets/images/project-4.webp";
-import project5 from "../assets/images/project-5.webp";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import project1 from '../assets/images/project-1.webp';
+import project2 from '../assets/images/project-2.webp';
+import project3 from '../assets/images/project-3.webp';
+import project4 from '../assets/images/project-4.webp';
+import project5 from '../assets/images/project-5.webp';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper';
 
 const Project = () => {
   const projects = [
     {
       img: project1,
-      name: "Marriott Reservation",
-      github_link: "https://github.com/Miliyonayalew/Marriott-Reservation-Backend",
-      live_link: "https://marriott-reservation.netlify.app/",
-      tech_stack: "#React  #PostgreSQL  #ROR",
+      name: 'Marriott Reservation',
+      github_link: 'https://github.com/Miliyonayalew/Marriott-Reservation-Backend',
+      live_link: 'https://marriott-reservation.netlify.app/',
+      tech_stack: '#React  #PostgreSQL  #ROR',
       description: 'Built a hotel reservation web app with React/Redux frontend and Ruby on Rails backend API.',
     },
     {
       img: project3,
       name: "Space Traveler's Hub",
-      github_link: "https://github.com/Miliyonayalew/space-travelers-hub",
-      live_link: "https://rad-cat-cbc90c.netlify.app/",
-      tech_stack: "#React #Redux #CSS",
+      github_link: 'https://github.com/Miliyonayalew/space-travelers-hub',
+      live_link: 'https://rad-cat-cbc90c.netlify.app/',
+      tech_stack: '#React #Redux #CSS',
       description: 'Web application for space travel company using SpaceX API for booking rockets and missions.',
     },
     {
       img: project2,
-      name: "Crypto-App",
-      github_link: "https://github.com/Miliyonayalew/crypto-app",
-      live_link: "https://poetic-lokum-2abf1e.netlify.app/",
-      tech_stack: "#React #Redux #Jest",
+      name: 'Crypto-App',
+      github_link: 'https://github.com/Miliyonayalew/crypto-app',
+      live_link: 'https://poetic-lokum-2abf1e.netlify.app/',
+      tech_stack: '#React #Redux #Jest',
       description: 'Track top 100 crypto values and prices through a web app for the cryptocurrency market.',
     },
     {
       img: project4,
-      name: "Tv Show",
-      github_link: "https://github.com/Miliyonayalew/Capstone-II",
-      live_link: "https://jfoyarzo.github.io/Capstone-II/",
-      tech_stack: "#HTML #CSS #JavaScript",
+      name: 'Tv Show',
+      github_link: 'https://github.com/Miliyonayalew/Capstone-II',
+      live_link: 'https://jfoyarzo.github.io/Capstone-II/',
+      tech_stack: '#HTML #CSS #JavaScript',
       description: 'The app showcases TV show info, and ratings/comments, with show card details and comment functionality. ',
     },
     {
       img: project5,
-      name: "Todo App",
-      github_link: "https://github.com/Miliyonayalew/react-todo",
-      live_link: "https://miliyonayalew.github.io/react-todo/",
-      tech_stack: "#React #CSS #Jest",
+      name: 'Todo App',
+      github_link: 'https://github.com/Miliyonayalew/react-todo',
+      live_link: 'https://miliyonayalew.github.io/react-todo/',
+      tech_stack: '#React #CSS #Jest',
       description: 'React to-do app enables the addition/deletion of tasks and filtering by completion status.',
     },
   ];
@@ -57,7 +57,9 @@ const Project = () => {
     <section id="projects" className="py-10 text-white">
       <div className="text-center">
         <h3 className="text-4xl font-semibold">
-          My <span className="text-cyan-600">Projects</span>
+          My
+          {' '}
+          <span className="text-cyan-600">Projects</span>
         </h3>
         <p className="text-gray-400 mt-3 text-lg">Here is some of my work.</p>
       </div>
@@ -72,7 +74,7 @@ const Project = () => {
                 slidesPerView: 4,
               },
             }}
-            loop={true}
+            loop
             autoplay={{
               delay: 3000,
             }}
@@ -97,6 +99,7 @@ const Project = () => {
                       href={project_info.github_link}
                       target="_blank"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      rel="noreferrer"
                     >
                       Github
                     </a>
@@ -104,6 +107,7 @@ const Project = () => {
                       href={project_info.live_link}
                       target="_blank"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
+                      rel="noreferrer"
                     >
                       Live Demo
                     </a>
@@ -113,7 +117,7 @@ const Project = () => {
             ))}
           </Swiper>
         </div>
-       
+
       </div>
     </section>
   );
