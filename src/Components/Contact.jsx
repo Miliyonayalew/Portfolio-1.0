@@ -93,43 +93,36 @@ const Contact = () => {
             />
             <button className="btn-primary w-fit" type="submit">Send Message</button>
           </form>
-          <div className="flex flex-col  gap-7 ">
-            {contactInfo.map((contact, i) => (
-              <div
-                key={i}
-                className="flex flex-row
-                  text-left gap-4 flex-wrap items-center"
-              >
-                <div className="min-w-[3.5rem]  text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
-                  <a
-                    href={
-                      contact.logo === 'mail' ? `mailto:${contact.link}`
-                        : contact.logo === 'call-outline' ? `tel:${contact.link}` : contact.link
-}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ion-icon name={contact.logo} />
-                  </a>
+          <div className="flex flex-col gap-7">
+            {contactInfo.map((contact) => {
+              let link;
+              if (contact.logo === 'mail') {
+                link = `mailto:${contact.link}`;
+              } else if (contact.logo === 'call-outline') {
+                link = `tel:${contact.link}`;
+              } else {
+                link = contact.link;
+              }
+
+              return (
+                <div key={contact.logo} className="flex flex-row text-left gap-4 flex-wrap items-center">
+                  <div className="min-w-[3.5rem] text-3xl min-h-[3.5rem] flex items-center justify-center text-white bg-cyan-600 rounded-full">
+                    <a href={link} target="_blank" rel="noreferrer">
+                      <ion-icon name={contact.logo} />
+                    </a>
+                  </div>
+                  <p className="md:text-base text-sm break-words">
+                    {contact.text}
+                    <br />
+                    <a href={link} target="_blank" className="text-cyan-600" rel="noreferrer">
+                      {contact.name}
+                    </a>
+                  </p>
                 </div>
-                <p className="md:text-base text-sm  break-words">
-                  {contact.text}
-                  <br />
-                  <a
-                    href={
-                      contact.logo === 'mail' ? `mailto:${contact.link}`
-                        : contact.logo === 'call-outline' ? `tel:${contact.link}` : contact.link
-}
-                    target="_blank"
-                    className="text-cyan-600"
-                    rel="noreferrer"
-                  >
-                    {contact.name}
-                  </a>
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </div>
     </section>
