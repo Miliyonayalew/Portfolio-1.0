@@ -47,9 +47,9 @@ const Skills = () => {
         </h3>
         <p className="text-gray-400 mt-3 text-lg">Skilled in creating secure, scalable web applications with responsive design and optimal user experiences.</p>
         <div className="flex items-center justify-center mt-12 gap-10 flex-wrap">
-          {skills?.map((skill, i) => (
+          {skills?.map((skill) => (
             <div
-              key={i}
+              key={skill.logo}
               className="border-2 cursor-pointer group border-cyan-600 relative ml-10 mr-10 min-w-[10rem] max-w-[16rem] bg-gray-900 p-10 rounded-xl transform transition duration-500 hover:scale-110"
 
             >
