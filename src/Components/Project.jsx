@@ -1,5 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper';
 import project1 from '../assets/images/project-1.webp';
 import project2 from '../assets/images/project-2.webp';
 import project3 from '../assets/images/project-3.webp';
@@ -7,7 +8,6 @@ import project4 from '../assets/images/project-4.webp';
 import project5 from '../assets/images/project-5.webp';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper';
 
 const Project = () => {
   const projects = [
@@ -83,20 +83,20 @@ const Project = () => {
             }}
             modules={[Pagination, Autoplay]}
           >
-            {projects.map((project_info, i) => (
-              <SwiperSlide key={i}>
+            {projects.map((projectInfo) => (
+              <SwiperSlide key={projectInfo.img}>
                 <div className="h-fit w-full p-4 bg-slate-700 rounded-xl">
-                  <img src={project_info.img} alt="" className="rounded-lg h-48 w-full " />
-                  <h3 className="text-xl my-4">{project_info.name}</h3>
-                  <p className="text-gray-400 mb-4 ">{project_info.description}</p>
+                  <img src={projectInfo.img} alt="" className="rounded-lg h-48 w-full " />
+                  <h3 className="text-xl my-4">{projectInfo.name}</h3>
+                  <p className="text-gray-400 mb-4 ">{projectInfo.description}</p>
                   <div className="flex gap-3 mb-4">
                     <span title="Tech Stack" className=" hover:text-cyan-600 text-white font-bold py-1 px-2 text-xs rounded cursor-pointer mr-1">
-                      {project_info.tech_stack}
+                      {projectInfo.tech_stack}
                     </span>
                   </div>
                   <div className="flex gap-3 mb-4">
                     <a
-                      href={project_info.github_link}
+                      href={projectInfo.github_link}
                       target="_blank"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
                       rel="noreferrer"
@@ -104,7 +104,7 @@ const Project = () => {
                       Github
                     </a>
                     <a
-                      href={project_info.live_link}
+                      href={projectInfo.live_link}
                       target="_blank"
                       className="text-cyan-600 bg-gray-800 px-2 py-1 inline-block"
                       rel="noreferrer"
